@@ -82,9 +82,18 @@ lose about this much.
 
 Cells 216–266 of the notebook — the XGBoost fit and the entire neural-network
 section — have `execution_count: null` and no outputs. They were written but
-never executed. **There is no XGBoost result, no neural-network result, and no
-Kaggle submission** for this project; `test_preds` is accumulated across folds
-but the `to_csv` calls that would write a submission file are commented out.
+never executed. **There is no XGBoost result anywhere in this project, and no
+Kaggle submission**; `test_preds` is accumulated across folds but the `to_csv`
+calls that would write a submission file are commented out.
+
+The neural network is the exception, and the earlier wording here was wrong.
+It was never run in this notebook, but it **was** trained, in a separate
+notebook from the same assignment, on a chronological 80/20 split
+(`shuffle=False`, 472,432 train / 118,108 validation). It scored **ROC-AUC
+0.8941, PR-AUC 0.4808**, and at threshold 0.5 it was **89.316% accurate
+against a do-nothing baseline of 96.559% on those same rows** — a real model,
+ranking fraud far better than chance, scoring seven accuracy points worse than
+answering "not fraud" every time. That notebook is not published here.
 
 ### Class imbalance
 
