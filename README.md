@@ -132,8 +132,8 @@ Cell execution counts in the committed notebook are left exactly as they were
 run — including the cells that never executed — so the notebook is also a
 record of what was and wasn't completed.
 
-Three things were changed for publication. None of them is code, a metric, or
-a result.
+Four things were changed for publication. None of them is code that ran, a
+metric, or a result.
 
 - The author's absolute Windows data paths in cell source were replaced with
   the repo-relative `datasets/ieee dataset/`, so the notebook runs from a clone
@@ -142,8 +142,17 @@ a result.
   output was replaced with `<venv>`.
 - Embedded figure images were removed from all but four cells, taking the file
   from 35MB to 3.9MB. The four that keep their images are the ones the case
-  study cites. Every other cell keeps its printed output, including the
+  study reproduces. Every other cell keeps its printed output, including the
   `<Figure size ... with N Axes>` placeholder matplotlib leaves behind.
+- 29 redundant comments were removed from 15 cells — commented-out plotting
+  calls that never ran, restatements of the line below them, and the Kaggle
+  new-notebook template's `# linear algebra` / `# data processing, CSV file
+  I/O` annotations on two import blocks.
 
-**No executed code, no metric, no printed number and no execution count was
+**Kept deliberately, because each is evidence for a claim made above:** every
+attribution comment and kernel URL, the commented-out SMOTE block, the
+commented-out submission writes, the `FAILED TIME CONSISTENCY TEST` markers,
+and every comment that explains why a value was chosen.
+
+**No executed code, no metric, no printed output and no execution count was
 changed**, and every `execution_count: null` is exactly as it was.
