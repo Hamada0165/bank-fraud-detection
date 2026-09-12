@@ -132,9 +132,18 @@ Cell execution counts in the committed notebook are left exactly as they were
 run — including the cells that never executed — so the notebook is also a
 record of what was and wasn't completed.
 
-Two edits were made for publication, both to filesystem paths and nothing else.
-The author's absolute Windows data paths in cell source were replaced with the
-repo-relative `datasets/ieee dataset/`, so the notebook runs from a clone once
-the data is downloaded; and a local virtualenv path that appeared in two cells'
-`pip install` console output was replaced with `<venv>`. No code, no metric, no
-figure, and no execution count was changed.
+Three things were changed for publication. None of them is code, a metric, or
+a result.
+
+- The author's absolute Windows data paths in cell source were replaced with
+  the repo-relative `datasets/ieee dataset/`, so the notebook runs from a clone
+  once the data is downloaded.
+- A local virtualenv path that appeared in two cells' `pip install` console
+  output was replaced with `<venv>`.
+- Embedded figure images were removed from all but four cells, taking the file
+  from 35MB to 3.9MB. The four that keep their images are the ones the case
+  study cites. Every other cell keeps its printed output, including the
+  `<Figure size ... with N Axes>` placeholder matplotlib leaves behind.
+
+**No executed code, no metric, no printed number and no execution count was
+changed**, and every `execution_count: null` is exactly as it was.
