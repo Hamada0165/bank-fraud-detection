@@ -1,0 +1,32 @@
+# --- secrets -------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kaggle.json
+
+# --- python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- data --------------------------------------------------------------------
+# The IEEE-CIS competition data is ~1.3GB and Kaggle's terms of use do not
+# permit redistributing it. See README.md for how to download it yourself.
+datasets/ieee dataset/
+datasets/porto_seguro/
+datasets/ieee_fraud/
+*.csv
+
+# --- os / editor ---------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.lnk
+.idea/
+.vscode/
